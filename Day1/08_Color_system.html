@@ -30,7 +30,7 @@
 <body>
     <h1>Color Systems in HTML and CSS</h1>
     <p>
-        Color systems in HTML and CSS allow you to specify colors for elements in different ways. The two most common are <strong>color names</strong> and <strong>RGB values</strong>.
+        Color systems in HTML and CSS allow you to specify colors for elements in different ways. The most common are <strong>color names</strong>, <strong>RGB values</strong>, and <strong>Hexadecimal values</strong>.
     </p>
 
     <h2>1. Color System Names</h2>
@@ -60,17 +60,32 @@
         <li>You can also use <code>rgba()</code> to add an alpha (opacity) value.</li>
     </ul>
 
+    <h2>3. Hexadecimal Colors</h2>
+    <p>
+        Hexadecimal (hex) colors use a <code>#RRGGBB</code> format, where RR, GG, and BB are two-digit hexadecimal numbers (00 to FF) representing red, green, and blue:
+    </p>
+    <div class="example"></div>
+        <p style="color: #ff0000;">This text is red.</p>
+        <p style="background-color: #add8e6;">This background is light blue.</p>
+    </div>
+    <ul>
+        <li>Hex values start with <code>#</code> and are followed by 3 or 6 hexadecimal digits.</li>
+        <li><code>#000000</code> is black, <code>#ffffff</code> is white.</li>
+        <li>Short form: <code>#f00</code> is the same as <code>#ff0000</code>.</li>
+    </ul>
+
     <h2>Gotchas</h2>
     <ul>
         <li>Not all browsers render named colors exactly the same, but differences are rare.</li>
-        <li>RGB values give you more control and allow for millions of colors, while names are limited.</li>
+        <li>RGB and Hex values give you more control and allow for millions of colors, while names are limited.</li>
     </ul>
 
     <h2>Example</h2>
-    <p>This shows the same color using both a name and an RGB value:</p>
+    <p>This shows the same color using a name, an RGB value, and a Hex value:</p>
     <div class="example">
         <h3 style="color: green;">Named Color: Green</h3>
         <h3 style="color: rgb(0, 128, 0);">RGB Color: Green</h3>
+        <h3 style="color: #008000;">Hex Color: Green</h3>
     </div>
 </body>
-</html>
+</html></div>
