@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Systems in HTML and CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .example {
+            margin: 16px 0;
+            padding: 10px;
+            background: #fff;
+            border-left: 4px solid #4CAF50;
+        }
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        ul {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Systems in HTML and CSS</h1>
+    <p>
+        Color systems in HTML and CSS allow you to specify colors for elements in different ways. The two most common are <strong>color names</strong> and <strong>RGB values</strong>.
+    </p>
+
+    <h2>1. Color System Names</h2>
+    <p>
+        HTML and CSS support a set of predefined color names, like <code>red</code>, <code>blue</code>, <code>green</code>, <code>orange</code>, etc. These are easy to remember and use:
+    </p>
+    <div class="example">
+        <p style="color: red;">This text is red.</p>
+        <p style="background-color: lightblue;">This background is light blue.</p>
+    </div>
+    <ul>
+        <li>There are 140+ standard color names.</li>
+        <li>They are case-insensitive (<code>Red</code> is the same as <code>red</code>).</li>
+    </ul>
+
+    <h2>2. RGB (Red, Green, Blue)</h2>
+    <p>
+        RGB stands for <strong>Red, Green, Blue</strong>. You define a color by specifying the intensity of each component:
+    </p>
+    <div class="example">
+        <p style="color: rgb(255, 0, 0);">This text is red.</p>
+        <p style="background-color: rgb(173, 216, 230);">This background is light blue.</p>
+    </div>
+    <ul>
+        <li>Each value ranges from 0 to 255.</li>
+        <li><code>rgb(0, 0, 0)</code> is black, <code>rgb(255, 255, 255)</code> is white.</li>
+        <li>You can also use <code>rgba()</code> to add an alpha (opacity) value.</li>
+    </ul>
+
+    <h2>Gotchas</h2>
+    <ul>
+        <li>Not all browsers render named colors exactly the same, but differences are rare.</li>
+        <li>RGB values give you more control and allow for millions of colors, while names are limited.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>This shows the same color using both a name and an RGB value:</p>
+    <div class="example">
+        <h3 style="color: green;">Named Color: Green</h3>
+        <h3 style="color: rgb(0, 128, 0);">RGB Color: Green</h3>
+    </div>
+</body>
+</html>
