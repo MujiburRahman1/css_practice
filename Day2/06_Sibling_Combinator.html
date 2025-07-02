@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Adjacent sibling: selects only the first <p> after an <h2> */
+    h2 + p {
+      color: blue;
+    }
+
+    /* General sibling: selects all <p> after an <h2> */
+    h2 ~ p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Title</h2>
+  <p>First paragraph (blue and bold)</p>
+  <p>Second paragraph (bold only)</p>
+  <div>Not affected</div>
+  <p>Third paragraph (bold only)</p>
+</body>
+</html>
