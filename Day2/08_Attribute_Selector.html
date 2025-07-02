@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Selects all <input> elements with a 'type' attribute */
+    input[type] {
+      border: 2px solid blue;
+    }
+
+    /* Selects <a> elements with href exactly equal to 'https://example.com' */
+    a[href="https://example.com"] {
+      color: green;
+    }
+
+    /* Selects <img> elements with 'alt' attribute containing 'logo' */
+    img[alt*="logo"] {
+      border: 2px dashed red;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" placeholder="Name">
+  <input placeholder="No type">
+  <a href="https://example.com">Example</a>
+  <a href="https://other.com">Other</a>
+  <img src="logo.png" alt="company logo">
+  <img src="icon.png" alt="icon">
+</body>
+</html>
