@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Pseudo-element Example</title>
+    <style>
+        p::first-line {
+            color: blue;
+            font-weight: bold;
+        }
+        p::before {
+            content: "★ ";
+            color: gold;
+        }
+        p::after {
+            content: " ✔";
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <p>This is an example of using CSS pseudo-elements. The first line is styled differently, and special symbols are added before and after the paragraph.</p>
+</body>
+</html>
