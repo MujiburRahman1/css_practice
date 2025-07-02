@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cascading & Specificity in CSS</title>
+    <style>
+        /* Lower specificity: element selector */
+        p {
+            color: blue;
+        }
+
+        /* Higher specificity: class selector */
+        .highlight {
+            color: green;
+        }
+
+        /* Even higher specificity: id selector */
+        #important {
+            color: red;
+        }
+
+        /* Inline style has the highest specificity */
+    </style>
+</head>
+<body>
+    <p>This is a normal paragraph (blue).</p>
+    <p class="highlight">This paragraph uses a class (green).</p>
+    <p id="important">This paragraph uses an ID (red).</p>
+    <p class="highlight" id="important">This paragraph has both class and ID (red, because ID wins).</p>
+    <p style="color: orange;">This paragraph uses inline style (orange, highest specificity).</p>
+</body>
+</html>
