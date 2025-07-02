@@ -1,0 +1,48 @@
+<!-- 10_Pseudo_Class.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Pseudo-Classes Example</title>
+  <style>
+    /* :hover - changes color when mouse is over the button */
+    button:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* :active - changes color when button is being clicked */
+    button:active {
+      background-color: #2E7D32;
+    }
+
+    /* :checked - styles checked checkboxes */
+    input[type="checkbox"]:checked + label {
+      color: #1976D2;
+      font-weight: bold;
+    }
+
+    /* :nth-of-type - styles every even list item */
+    ul li:nth-of-type(even) {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pseudo-Class Demo</h2>
+
+  <button>Hover or Click Me</button>
+
+  <div>
+    <input type="checkbox" id="check1">
+    <label for="check1">Check me!</label>
+  </div>
+
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+    <li>Fourth item</li>
+  </ul>
+</body>
+</html>
