@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Inheritance Example</title>
+    <style>
+        /* Parent element sets color and font-family */
+        body {
+            color: darkblue;
+            font-family: Arial, sans-serif;
+        }
+
+        /* This property is NOT inherited */
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Child element overrides inherited color */
+        h1 {
+            color: darkred;
+        }
+
+        /* This property is inherited */
+        p {
+            font-size: 18px;
+        }
+
+        /* This property is NOT inherited */
+        .no-inherit {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Inheritance Demo</h1>
+    <p>This paragraph inherits <b>color</b> and <b>font-family</b> from the body.</p>
+    <div>
+        <p>This paragraph is inside a div and still inherits <b>color</b> and <b>font-family</b>.</p>
+        <span class="no-inherit">This span has a border, but border is not inherited by its children.</span>
+    </div>
+</body>
+</html>
