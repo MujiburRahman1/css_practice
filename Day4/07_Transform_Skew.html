@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Transform: Skew Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+            /* Skew the box */
+            transform: skew(20deg, 10deg);
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            /* Skew the box further on hover */
+            transform: skew(30deg, 20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Skew</div>
+</body>
+</html>
