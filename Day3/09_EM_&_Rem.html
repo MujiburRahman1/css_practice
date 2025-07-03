@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EM & REM Units Example</title>
+    <style>
+        html {
+            font-size: 16px; /* 1rem = 16px */
+        }
+        body {
+            font-size: 1rem; /* 16px */
+        }
+        .em-example {
+            font-size: 2em; /* 2 x parent font-size (body) = 32px */
+            margin-bottom: 1em; /* 32px */
+        }
+        .rem-example {
+            font-size: 2rem; /* 2 x root font-size = 32px */
+            margin-bottom: 1rem; /* 16px */
+        }
+        .nested {
+            font-size: 1.5em; /* 1.5 x parent (.em-example) = 48px */
+        }
+    </style>
+</head>
+<body>
+    <h1>EM & REM Units in CSS</h1>
+    <div class="em-example">
+        This text uses <strong>2em</strong> font-size.
+        <div class="nested">
+            This nested text uses <strong>1.5em</strong> (relative to parent).
+        </div>
+    </div>
+    <div class="rem-example">
+        This text uses <strong>2rem</strong> font-size.
+    </div>
+    <p>
+        <strong>em</strong> units are relative to the font-size of their parent.<br>
+        <strong>rem</strong> units are relative to the root (html) font-size.
+    </p>
+</body>
+</html></div>
