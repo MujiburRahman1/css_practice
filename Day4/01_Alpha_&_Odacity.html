@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha and Opacity in CSS</title>
+    <style>
+        .opaque-box {
+            width: 200px;
+            height: 100px;
+            background-color: rgba(0, 128, 255, 1); /* Fully opaque */
+            margin-bottom: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .semi-transparent-box {
+            width: 200px;
+            height: 100px;
+            background-color: rgba(0, 128, 255, 0.5); /* 50% opacity using alpha */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .opacity-box {
+            width: 200px;
+            height: 100px;
+            background-color: #0080ff;
+            opacity: 0.3; /* 30% opacity for the whole element */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="opaque-box">Opaque (alpha=1)</div>
+    <div class="semi-transparent-box">Alpha 0.5 (rgba)</div>
+    <div class="opacity-box">Opacity 0.3</div>
+</body>
+</html>
