@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Transform: Translate Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+            /* Move the box 50px right and 30px down */
+            transform: translate(50px, 30px);
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            /* Move the box further on hover */
+            transform: translate(120px, 60px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Translate</div>
+</body>
+</html>
