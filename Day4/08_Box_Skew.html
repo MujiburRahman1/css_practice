@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Skew with Shadow</title>
+    <style>
+        .wrapper {
+            width: 200px;
+            height: 100px;
+            margin: 50px auto;
+            box-shadow: 2px 2px 8px rgba(194, 8, 33, 0.5); /* Shadow on wrapper */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .skew-box {
+            width: 100%;
+            height: 100%;
+            background: #4a90e2;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transform: skewX(20deg); /* Only skew inner box */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="skew-box">
+            Skewed Box
+        </div>
+    </div>
+</body>
+</html>
