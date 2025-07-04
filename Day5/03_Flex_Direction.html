@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Direction Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row; /* Try: row, row-reverse, column, column-reverse */
+            gap: 16px;
+            border: 2px solid #333;
+            padding: 16px;
+            height: 200px;
+        }
+        .item {
+            background: #4caf50;
+            color: #fff;
+            padding: 24px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Flex Direction Example</h2>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <p>
+        Change <code>flex-direction</code> in the CSS to see the effect: <br>
+        <strong>row</strong> (default), <strong>row-reverse</strong>, <strong>column</strong>, <strong>column-reverse</strong>
+    </p>
+</body>
+</html>
