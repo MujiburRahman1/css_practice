@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Justify Content Example</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid #333;
+            height: 80px;
+            margin-bottom: 30px;
+            background: #f9f9f9;
+        }
+        .item {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+        }
+        .flex-start {
+            justify-content: flex-start;
+        }
+        .flex-end {
+            justify-content: flex-end;
+        }
+        .center {
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>justify-content: flex-start</h2>
+    <div class="container flex-start">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <p>With <b>justify-content: flex-start</b>, items are aligned to the start of the flex container (left side).</p>
+
+    <h2>justify-content: flex-end</h2>
+    <div class="container flex-end">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <p>With <b>justify-content: flex-end</b>, items are aligned to the end of the flex container (right side).</p>
+
+    <h2>justify-content: center</h2>
+    <div class="container center">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <p>With <b>justify-content: center</b>, items are centered horizontally in the flex container.</p>
+</body>
+</html>
