@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Shorthand Example</title>
+    <style>
+        .container {
+            display: flex;
+            /* flex: flex-grow flex-shrink flex-basis */
+            /* Example: flex: 2 1 150px; */
+        }
+        .item1 {
+            flex: 2 1 150px; /* grow:2, shrink:1, basis:150px */
+            background: #4caf50;
+            color: #fff;
+            padding: 20px;
+            margin: 5px;
+        }
+        .item2 {
+            flex: 1 2 100px; /* grow:1, shrink:2, basis:100px */
+            background: #2196f3;
+            color: #fff;
+            padding: 20px;
+            margin: 5px;
+        }
+        .item3 {
+            flex: 1; /* grow:1, shrink:1, basis:0% (default) */
+            background: #ff9800;
+            color: #fff;
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Flex Shorthand Example</h2>
+    <div class="container">
+        <div class="item1">Item 1 (flex: 2 1 150px)</div>
+        <div class="item2">Item 2 (flex: 1 2 100px)</div>
+        <div class="item3">Item 3 (flex: 1)</div>
+    </div>
+</body>
+</html>
