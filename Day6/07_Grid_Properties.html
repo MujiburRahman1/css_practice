@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete CSS Grid Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            margin-top: 25px;
+            color: #3498db;
+        }
+        
+        .grid-container {
+            display: grid;
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .special-item {
+            background-color: #e74c3c;
+        }
+        
+        .code {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background-color: #e7f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        
+        .tall-container {
+            height: 400px;
+        }
+        
+        .property-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .property-table th, .property-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .property-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .property-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complete CSS Grid Properties Guide</h1>
+    
+    <h2>1. Grid Container Properties</h2>
+    
+    <h3>display</h3>
+    <div class="code">display: grid; /* creates a grid container */
+display: inline-grid; /* creates an inline-level grid */</div>
+    
+    <h3>grid-template-columns & grid-template-rows</h3>
+    <div class="code">grid-template-columns: 100px 1fr 2fr;
+grid-template-rows: 80px auto 120px;</div>
+    <div class="grid-container" style="grid-template-columns: 100px 1fr 2fr; grid-template-rows: 80px auto 120px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    
+    <h3>grid-template-areas</h3>
+    <div class="code">grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";</div>
+    <div class="grid-container" style="grid-template-areas:
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+        grid-template-rows: 80px 1fr 60px;">
+        <div class="grid-item" style="grid-area: header; background: #3498db;">Header</div>
+        <div class="grid-item" style="grid-area: sidebar; background: #e74c3c;">Sidebar</div>
+        <div class="grid-item" style="grid-area: main; background: #2ecc71;">Main</div>
+        <div class="grid-item" style="grid-area: footer; background: #f39c12;">Footer</div>
+    </div>
+    
+    <h3>gap (grid-gap)</h3>
+    <div class="code">gap: 20px; /* both row and column */
+row-gap: 10px;
+column-gap: 30px;</div>
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 10px 30px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    
+    <h3>justify-items & align-items</h3>
+    <div class="code">justify-items: center; /* horizontal alignment */
+align-items: center; /* vertical alignment */
+place-items: center; /* shorthand */</div>
+    <div class="grid-container tall-container" style="grid-template-columns: repeat(3, 1fr); place-items: center;">
+        <div class="grid-item" style="width: 80px; height: 80px;">1</div>
+        <div class="grid-item" style="width: 80px; height: 80px;">2</div>
+        <div class="grid-item" style="width: 80px; height: 80px;">3</div>
+    </div>
+    
+    <h3>justify-content & align-content</h3>
+    <div class="code">justify-content: center; /* horizontal grid alignment */
+align-content: center; /* vertical grid alignment */
+place-content: center; /* shorthand */</div>
+    <div class="grid-container tall-container" style="grid-template-columns: repeat(3, 100px); place-content: center;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    
+    <h3>grid-auto-columns & grid-auto-rows</h3>
+    <div class="code">grid-auto-columns: 100px;
+grid-auto-rows: 80px;</div>
+    <div class="grid-container" style="grid-template-columns: 100px 100px; grid-auto-rows: 80px; height: 300px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item" style="grid-column: 3;">3 (auto-column)</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    
+    <h3>grid-auto-flow</h3>
+    <div class="code">grid-auto-flow: row; /* default */
+grid-auto-flow: column;
+grid-auto-flow: dense;</div>
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); grid-auto-flow: dense;">
+        <div class="grid-item">1</div>
+        <div class="grid-item" style="grid-column: span 2;">2 (span 2)</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+    </div>
+    
+    <h2>2. Grid Item Properties</h2>
+    
+    <h3>grid-column & grid-row</h3>
+    <div class="code">grid-column: 1 / 3; /* start at 1, end at 3 */
+grid-row: 2 / span 2; /* start at 2, span 2 rows */</div>
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 80px);">
+        <div class="grid-item" style="grid-column: 1 / 3; grid-row: 1 / span 2; background: #9b59b6;">1 (spans 2 cols & 2 rows)</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+    </div>
+    
+    <h3>grid-area</h3>
+    <div class="code">grid-area: 1 / 2 / 3 / 4; /* row-start / col-start / row-end / col-end */
+grid-area: header; /* when using named areas */</div>
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 80px);">
+        <div class="grid-item" style="grid-area: 1 / 2 / 3 / 4; background: #e67e22;">1 (grid-area: 1/2/3/4)</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+    </div>
+    
+    <h3>justify-self & align-self</h3>
+    <div class="code">justify-self: start | end | center | stretch;
+align-self: start | end | center | stretch;
+place-self: center; /* shorthand */</div>
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); height: 150px;">
+        <div class="grid-item" style="justify-self: start; align-self: end; width: 80px; height: 80px;">1</div>
+        <div class="grid-item" style="place-self: center; width: 80px; height: 80px;">2</div>
+        <div class="grid-item" style="justify-self: end; align-self: start; width: 80px; height: 80px;">3</div>
+    </div>
+    
+    <h2>3. CSS Grid Properties Reference Table</h2>
+    
+    <table class="property-table">
+        <tr>
+            <th>Property</th>
+            <th>Applies To</th>
+            <th>Description</th>
+            <th>Values</th>
+        </tr>
+        <tr>
+            <td>display</td>
+            <td>Container</td>
+            <td>Defines a grid container</td>
+            <td>grid | inline-grid</td>
+        </tr>
+        <tr>
+            <td>grid-template-columns<br>grid-template-rows</td>
+            <td>Container</td>
+            <td>Defines column/row sizes</td>
+            <td>track sizes (px, fr, %, auto, minmax(), etc.)</td>
+        </tr>
+        <tr>
+            <td>grid-template-areas</td>
+            <td>Container</td>
+            <td>Defines named grid areas</td>
+            <td>none | area names</td>
+        </tr>
+        <tr>
+            <td>gap, row-gap, column-gap</td>
+            <td>Container</td>
+            <td>Spacing between grid items</td>
+            <td>length values</td>
+        </tr>
+        <tr>
+            <td>justify-items<br>align-items<br>place-items</td>
+            <td>Container</td>
+            <td>Alignment of items within cells</td>
+            <td>start | end | center | stretch</td>
+        </tr>
+        <tr>
+            <td>justify-content<br>align-content<br>place-content</td>
+            <td>Container</td>
+            <td>Alignment of the grid itself</td>
+            <td>start | end | center | stretch | space-around | space-between | space-evenly</td>
+        </tr>
+        <tr>
+            <td>grid-auto-columns<br>grid-auto-rows</td>
+            <td>Container</td>
+            <td>Size of implicit tracks</td>
+            <td>track sizes</td>
+        </tr>
+        <tr>
+            <td>grid-auto-flow</td>
+            <td>Container</td>
+            <td>Auto-placement algorithm</td>
+            <td>row | column | dense</td>
+        </tr>
+        <tr>
+            <td>grid-column<br>grid-row</td>
+            <td>Items</td>
+            <td>Item placement in grid</td>
+            <td>line numbers | span n</td>
+        </tr>
+        <tr>
+            <td>grid-area</td>
+            <td>Items</td>
+            <td>Shorthand for row/column placement or area name</td>
+            <td>name | row-start/col-start/row-end/col-end</td>
+        </tr>
+        <tr>
+            <td>justify-self<br>align-self<br>place-self</td>
+            <td>Items</td>
+            <td>Individual item alignment</td>
+            <td>start | end | center | stretch</td>
+        </tr>
+    </table>
+</body>
+</html>
