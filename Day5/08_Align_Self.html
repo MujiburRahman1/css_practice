@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS align-self Example</title>
+    <style>
+        .container {
+            display: flex;
+            height: 200px;
+            background: #f0f0f0;
+            align-items: center; /* Default alignment for all items */
+        }
+        .item {
+            width: 100px;
+            height: 50px;
+            background: #4caf50;
+            color: white;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .align-start {
+            align-self: flex-start;
+            background: #2196f3;
+        }
+        .align-end {
+            align-self: flex-end;
+            background: #ff9800;
+        }
+        .align-center {
+            align-self: center;
+            background: #e91e63;
+        }
+        .align-stretch {
+            align-self: stretch;
+            background: #9c27b0;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS <code>align-self</code> Example</h2>
+    <div class="container">
+        <div class="item align-start">flex-start</div>
+        <div class="item align-end">flex-end</div>
+        <div class="item align-center">center</div>
+        <div class="item align-stretch">stretch</div>
+        <div class="item">default</div>
+    </div>
+    <p>
+        The <code>align-self</code> property allows you to override the container's <code>align-items</code> value for individual flex items.
+    </p>
+</body>
+</html>
