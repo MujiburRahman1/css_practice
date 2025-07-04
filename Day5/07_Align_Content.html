@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS align-content Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 300px;
+            border: 2px solid #333;
+            align-content: space-between; /* Try: flex-start, flex-end, center, space-around, stretch */
+        }
+        .item {
+            flex: 0 0 45%;
+            margin: 5px;
+            background: #4caf50;
+            color: #fff;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS <code>align-content</code> Example</h2>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+    </div>
+    <p>
+        <strong>align-content</strong> controls the spacing between flex lines when there is extra space in the cross-axis.<br>
+        Try changing <code>align-content</code> in the CSS to see different effects.
+    </p>
+</body>
+</html>
