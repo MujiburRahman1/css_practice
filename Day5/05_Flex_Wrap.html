@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Flex Wrap Example</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f2f2f2;
+            padding: 10px;
+            gap: 10px;
+        }
+        .flex-item {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            width: 150px;
+            text-align: center;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Flex Wrap Example</h2>
+    <p>
+        The <code>flex-wrap</code> property in CSS controls whether flex items are forced onto one line or can wrap onto multiple lines. 
+        By default, flex items will try to fit into one line. Setting <code>flex-wrap: wrap;</code> allows the items to wrap onto multiple lines if necessary.
+    </p>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+        <div class="flex-item">Item 4</div>
+        <div class="flex-item">Item 5</div>
+        <div class="flex-item">Item 6</div>
+    </div>
+</body>
+</html>
