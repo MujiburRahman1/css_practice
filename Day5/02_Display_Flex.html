@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Display Flex Example</title>
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: #f2f2f2;
+            padding: 20px;
+            gap: 15px;
+        }
+        .flex-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            flex: 1;
+            text-align: center;
+        }
+        /* New example styles */
+        .flex-container-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #e0e0e0;
+            padding: 20px;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        .flex-item-alt {
+            background-color: #2196F3;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- New Flexbox Example -->
+    <div class="flex-container-column">
+        <div class="flex-item-alt">Column 1</div>
+        <div class="flex-item-alt">Column 2</div>
+        <div class="flex-item-alt">Column 3</div>
+    </div>
+</body>
+</html>
