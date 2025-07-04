@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS align-items Example</title>
+    <style>
+        .container {
+            display: flex;
+            height: 200px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        .item {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .align-start { align-items: flex-start; }
+        .align-center { align-items: center; }
+        .align-end { align-items: flex-end; }
+        .align-stretch { align-items: stretch; }
+        .align-baseline { align-items: baseline; }
+    </style>
+</head>
+<body>
+    <h2>CSS <code>align-items</code> Property</h2>
+    <p>
+        The <code>align-items</code> property in CSS is used with flexbox layouts to align flex items along the cross axis (vertical axis by default). Common values include <code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>stretch</code>, and <code>baseline</code>.
+    </p>
+
+    <h3>align-items: flex-start</h3>
+    <div class="container align-start">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <h3>align-items: center</h3>
+    <div class="container align-center">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <h3>align-items: flex-end</h3>
+    <div class="container align-end">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+</body>
+</html>
