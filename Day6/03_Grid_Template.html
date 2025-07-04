@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .grid-container {
+            display: grid;
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Template</h1>
+
+    <!-- 1. Basic Grid -->
+    <h2>1. Basic Grid Structure</h2>
+    <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 100px 200px 100px;
+    grid-template-rows: 100px 200px;
+}</code></pre>
+    
+    <div class="grid-container" style="grid-template-columns: 100px 200px 100px; grid-template-rows: 100px 200px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- 2. Fraction Units -->
+    <h2>2. Using fr Units</h2>
+    <pre><code>.grid-container {
+    grid-template-columns: 1fr 2fr 1fr;
+}</code></pre>
+    
+    <div class="grid-container" style="grid-template-columns: 1fr 2fr 1fr;">
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">2fr</div>
+        <div class="grid-item">1fr</div>
+    </div>
+
+    <!-- 3. Grid Gap -->
+    <h2>3. Grid Gaps</h2>
+    <pre><code>.grid-container {
+    column-gap: 20px;
+    row-gap: 10px;
+    /* or shorthand */
+    gap: 10px 20px;
+}</code></pre>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 10px 20px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- 4. Grid Template Areas -->
+    <h2>4. Template Areas</h2>
+    <pre><code>.grid-container {
+    grid-template-areas:
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+    
+    <div class="grid-container" style="grid-template-areas:
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+        grid-template-rows: 80px 200px 80px;">
+        <div class="grid-item" style="grid-area: header; background: #3498db;">Header</div>
+        <div class="grid-item" style="grid-area: sidebar; background: #e74c3c;">Sidebar</div>
+        <div class="grid-item" style="grid-area: main; background: #2ecc71;">Main</div>
+        <div class="grid-item" style="grid-area: footer; background: #f39c12;">Footer</div>
+    </div>
+
+    <!-- 5. Responsive Grid -->
+    <h2>5. Responsive Grid</h2>
+    <pre><code>.grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}</code></pre>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+    </div>
+
+    <!-- 6. Grid Alignment -->
+    <h2>6. Alignment Properties</h2>
+    <pre><code>.grid-container {
+    justify-items: center;   /* horizontal alignment */
+    align-items: center;     /* vertical alignment */
+    place-items: center;     /* shorthand */
+    
+    justify-content: center; /* horizontal grid alignment */
+    align-content: center;   /* vertical grid alignment */
+}</code></pre>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 100px); 
+        height: 300px; place-items: center; justify-content: center;">
+        <div class="grid-item" style="width: 80px; height: 80px;">1</div>
+        <div class="grid-item" style="width: 80px; height: 80px;">2</div>
+        <div class="grid-item" style="width: 80px; height: 80px;">3</div>
+    </div>
+</body>
+</html>
