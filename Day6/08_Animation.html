@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations Complete Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .example-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .animated-element {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .code {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background-color: #e7f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        
+        /* Animation examples */
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .rotate {
+            animation: rotate 3s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .color-change {
+            animation: colorChange 4s infinite alternate;
+        }
+        
+        @keyframes colorChange {
+            0% { background-color: #3498db; }
+            50% { background-color: #e74c3c; }
+            100% { background-color: #2ecc71; }
+        }
+        
+        .slide-in {
+            animation: slideIn 1.5s forwards;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-200px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .mixed-animation {
+            animation: mixed 4s infinite alternate;
+        }
+        
+        @keyframes mixed {
+            0% { 
+                transform: translateY(0) rotate(0deg);
+                background-color: #3498db;
+                border-radius: 0;
+            }
+            50% { 
+                transform: translateY(-50px) rotate(180deg);
+                background-color: #e74c3c;
+                border-radius: 50%;
+            }
+            100% { 
+                transform: translateY(0) rotate(360deg);
+                background-color: #2ecc71;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Animations Complete Guide</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> CSS animations allow you to animate transitions from one CSS style configuration to another.
+    </div>
+    
+    <h2>1. Basic Animation Syntax</h2>
+    <div class="code">
+/* Define the animation */
+@keyframes example {
+    from { background-color: red; }
+    to { background-color: yellow; }
+}
+
+/* Apply the animation */
+.element {
+    animation-name: example;
+    animation-duration: 4s;
+}</div>
+    
+    <h2>2. Animation Properties</h2>
+    
+    <div class="example-box">
+        <h3>animation-name</h3>
+        <p>Specifies the name of the @keyframes animation:</p>
+        <div class="code">animation-name: slideIn;</div>
+        
+        <h3>animation-duration</h3>
+        <p>How long the animation should take to complete:</p>
+        <div class="code">animation-duration: 2s;</div>
+        
+        <h3>animation-timing-function</h3>
+        <p>Speed curve of the animation:</p>
+        <div class="code">animation-timing-function: ease | ease-in | ease-out | ease-in-out | linear | cubic-bezier(n,n,n,n);</div>
+        
+        <h3>animation-delay</h3>
+        <p>Delay before the animation starts:</p>
+        <div class="code">animation-delay: 1s;</div>
+        
+        <h3>animation-iteration-count</h3>
+        <p>How many times the animation should play:</p>
+        <div class="code">animation-iteration-count: 3 | infinite;</div>
+        
+        <h3>animation-direction</h3>
+        <p>Whether the animation should play in reverse or alternate cycles:</p>
+        <div class="code">animation-direction: normal | reverse | alternate | alternate-reverse;</div>
+        
+        <h3>animation-fill-mode</h3>
+        <p>Specifies what values are applied before/after the animation:</p>
+        <div class="code">animation-fill-mode: none | forwards | backwards | both;</div>
+        
+        <h3>animation (shorthand)</h3>
+        <p>Shorthand for all animation properties:</p>
+        <div class="code">animation: name duration timing-function delay iteration-count direction fill-mode;</div>
+    </div>
+    
+    <h2>3. Animation Examples</h2>
+    
+    <div class="example-box">
+        <h3>Bounce Animation</h3>
+        <div class="code">@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}</div>
+        <div class="animated-element bounce">Bounce</div>
+    </div>
+    
+    <div class="example-box">
+        <h3>Rotation Animation</h3>
+        <div class="code">@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotate {
+    animation: rotate 3s linear infinite;
+}</div>
+        <div class="animated-element rotate">Rotate</div>
+    </div>
+    
+    <div class="example-box">
+        <h3>Color Change Animation</h3>
+        <div class="code">@keyframes colorChange {
+    0% { background-color: #3498db; }
+    50% { background-color: #e74c3c; }
+    100% { background-color: #2ecc71; }
+}
+
+.color-change {
+    animation: colorChange 4s infinite alternate;
+}</div>
+        <div class="animated-element color-change">Colors</div>
+    </div>
+    
+    <div class="example-box">
+        <h3>Slide-In Animation</h3>
+        <div class="code">@keyframes slideIn {
+    from { transform: translateX(-200px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in {
+    animation: slideIn 1.5s forwards;
+}</div>
+        <div class="animated-element slide-in">Slide In</div>
+    </div>
+    
+    <div class="example-box">
+        <h3>Pulse Animation</h3>
+        <div class="code">@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}</div>
+        <div class="animated-element pulse">Pulse</div>
+    </div>
+    
+    <div class="example-box">
+        <h3>Mixed Animation</h3>
+        <div class="code">@keyframes mixed {
+    0% { 
+        transform: translateY(0) rotate(0deg);
+        background-color: #3498db;
+        border-radius: 0;
+    }
+    50% { 
+        transform: translateY(-50px) rotate(180deg);
+        background-color: #e74c3c;
+        border-radius: 50%;
+    }
+    100% { 
+        transform: translateY(0) rotate(360deg);
+        background-color: #2ecc71;
+        border-radius: 0;
+    }
+}
+
+.mixed-animation {
+    animation: mixed 4s infinite alternate;
+}</div>
+        <div class="animated-element mixed-animation">Mixed</div>
+    </div>
+    
+    <h2>4. Animation Events with JavaScript</h2>
+    <div class="code">
+// Listen for animation events
+const element = document.querySelector('.animated-element');
+
+element.addEventListener('animationstart', () => {
+    console.log('Animation started');
+});
+
+element.addEventListener('animationend', () => {
+    console.log('Animation ended');
+});
+
+element.addEventListener('animationiteration', () => {
+    console.log('Animation iteration');
+});
+    </div>
+    
+    <h2>5. Performance Considerations</h2>
+    <div class="note">
+        <ul>
+            <li>Use <code>transform</code> and <code>opacity</code> for best performance (they don't trigger layout/paint)</li>
+            <li>Avoid animating properties like <code>width</code>, <code>height</code>, <code>margin</code>, etc.</li>
+            <li>Use <code>will-change</code> to hint browsers about upcoming animations</li>
+            <li>Limit the number of simultaneous animations</li>
+            <li>Test animations on mobile devices</li>
+        </ul>
+    </div>
+</body>
+</html>
