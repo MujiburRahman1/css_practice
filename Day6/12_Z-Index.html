@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS z-index Complete Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+        }
+        
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .example-container {
+            position: relative;
+            height: 300px;
+            margin: 30px 0;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        
+        .box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .code {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background-color: #e7f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        
+        /* z-index examples */
+        .box1 {
+            background-color: #e74c3c;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+        
+        .box2 {
+            background-color: #3498db;
+            top: 70px;
+            left: 70px;
+            z-index: 2;
+        }
+        
+        .box3 {
+            background-color: #2ecc71;
+            top: 120px;
+            left: 120px;
+            z-index: 3;
+        }
+        
+        .box4 {
+            background-color: #f39c12;
+            top: 170px;
+            left: 170px;
+            z-index: auto; /* default */
+        }
+        
+        /* Stacking context example */
+        .stacking-context {
+            position: relative;
+            background-color: #34495e;
+            padding: 20px;
+            margin-top: 40px;
+            z-index: 0;
+        }
+        
+        .stacked-box {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+        }
+        
+        .stacked-box1 {
+            background-color: #9b59b6;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+        
+        .stacked-box2 {
+            background-color: #1abc9c;
+            top: 70px;
+            left: 70px;
+            z-index: 5;
+        }
+        
+        /* Negative z-index example */
+        .negative-example {
+            position: relative;
+            height: 200px;
+            background-color: #ecf0f1;
+            margin-top: 40px;
+        }
+        
+        .negative-box {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background-color: #e74c3c;
+            z-index: -1;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS z-index Complete Guide</h1>
+    
+    <div class="note">
+        <strong>z-index</strong> controls the vertical stacking order of elements that overlap. Higher z-index values appear in front of lower ones.
+    </div>
+    
+    <h2>1. Basic z-index Example</h2>
+    <div class="code">
+.box1 { z-index: 1; }
+.box2 { z-index: 2; }
+.box3 { z-index: 3; }
+.box4 { z-index: auto; } /* default */
+    </div>
+    
+    <div class="example-container">
+        <div class="box box1">z-index: 1</div>
+        <div class="box box2">z-index: 2</div>
+        <div class="box box3">z-index: 3</div>
+        <div class="box box4">z-index: auto</div>
+    </div>
+    
+    <h2>2. How z-index Works</h2>
+    <ul>
+        <li>Only works on <strong>positioned</strong> elements (position: relative, absolute, fixed, sticky)</li>
+        <li>Default value is <code>auto</code> (same as 0 but doesn't create stacking context)</li>
+        <li>Can accept positive, negative, and zero values</li>
+        <li>Elements with higher z-index values appear in front</li>
+    </ul>
+    
+    <h2>3. Stacking Context</h2>
+    <p>A stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis.</p>
+    
+    <div class="code">
+.parent {
+    position: relative;
+    z-index: 0; /* Creates a stacking context */
+}
+
+.child {
+    position: absolute;
+    z-index: 10; /* Only competes with siblings */
+}
+    </div>
+    
+    <div class="stacking-context">
+        <h3>Parent with z-index: 0 (creates stacking context)</h3>
+        <div class="stacked-box stacked-box1">z-index: 10</div>
+        <div class="stacked-box stacked-box2">z-index: 5</div>
+    </div>
+    
+    <div class="note">
+        <strong>Key Point:</strong> z-index values only compete within the same stacking context. A child with z-index: 1000 will still appear behind a parent's sibling with z-index: 1.
+    </div>
+    
+    <h2>4. Negative z-index</h2>
+    <div class="code">
+.background {
+    position: absolute;
+    z-index: -1; /* Appears behind non-positioned content */
+}
+    </div>
+    
+    <div class="negative-example">
+        <h3>Normal content flow</h3>
+        <p>This text appears in front of the box with negative z-index.</p>
+        <div class="negative-box">z-index: -1</div>
+    </div>
+    
+    <h2>5. What Creates a Stacking Context?</h2>
+    <ul>
+        <li>Root element (HTML)</li>
+        <li>Positioned elements with z-index value other than "auto"</li>
+        <li>Elements with opacity less than 1</li>
+        <li>Elements with transform, filter, perspective, clip-path, or mask properties</li>
+        <li>Flex items with z-index other than "auto"</li>
+        <li>Grid items with z-index other than "auto"</li>
+    </ul>
+    
+    <h2>6. Common z-index Problems</h2>
+    
+    <h3>Problem 1: z-index Not Working</h3>
+    <div class="code">
+/* Won't work without positioning */
+.element {
+    z-index: 10; /* Has no effect */
+    position: static; /* Default */
+}
+
+/* Solution: Add positioning */
+.element {
+    position: relative;
+    z-index: 10; /* Now works */
+}
+    </div>
+    
+    <h3>Problem 2: Parent Sibling Overrides Child</h3>
+    <div class="code">
+<div class="parent1" style="z-index: 1;">
+    <div class="child" style="z-index: 1000;"></div>
+</div>
+<div class="parent2" style="z-index: 2;">
+    <!-- This will appear above parent1's child -->
+</div>
+    </div>
+    
+    <h2>7. Best Practices</h2>
+    <ul>
+        <li>Use small, meaningful values (1-10 for most cases)</li>
+        <li>Document your z-index scale in comments or CSS variables</li>
+        <li>Avoid extremely high values (like 9999)</li>
+        <li>Consider using CSS custom properties for maintainability:</li>
+    </ul>
+    
+    <div class="code">
+:root {
+    --z-modal: 100;
+    --z-dropdown: 50;
+    --z-tooltip: 25;
+}
+
+.modal {
+    z-index: var(--z-modal);
+}
+    </div>
+    
+    <h2>8. Practical z-index Scale Example</h2>
+    <div class="code">
+/* Base elements */
+:root {
+    --z-default: 0;
+    --z-below: -1;
+    --z-base: 1;
+    --z-dropdown: 10;
+    --z-tooltip: 20;
+    --z-modal-overlay: 30;
+    --z-modal: 40;
+    --z-toast: 50;
+}
+
+/* Usage */
+.dropdown {
+    z-index: var(--z-dropdown);
+}
+
+.modal {
+    z-index: var(--z-modal);
+}
+    </div>
+</body>
+</html>
