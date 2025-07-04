@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Gaps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .grid-container {
+            display: grid;
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .code {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Gaps</h1>
+    
+    <!-- 1. Basic Gap -->
+    <h2>1. Uniform Gap (gap)</h2>
+    <div class="code">grid-gap: 20px; /* older syntax */
+gap: 20px; /* modern syntax */</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- 2. Separate Row and Column Gaps -->
+    <h2>2. Separate Row and Column Gaps</h2>
+    <div class="code">row-gap: 10px;
+column-gap: 30px;
+
+/* Shorthand */
+gap: 10px 30px; /* row-gap column-gap */</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); row-gap: 10px; column-gap: 30px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- 3. Percentage Gaps -->
+    <h2>3. Percentage Gaps</h2>
+    <div class="code">gap: 5%; /* Relative to container size */</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 5%; height: 200px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- 4. No Gap -->
+    <h2>4. No Gap (Default)</h2>
+    <div class="code">gap: 0; /* Default value */</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 0;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- 5. Different Gaps for Different Grids -->
+    <h2>5. Different Gaps for Different Grids</h2>
+    <div class="code">.grid-1 { gap: 5px; }
+.grid-2 { gap: 15px; }</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 10px;">
+        <div class="grid-item">Small Gap (5px)</div>
+        <div class="grid-item">Small Gap (5px)</div>
+        <div class="grid-item">Small Gap (5px)</div>
+    </div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 15px;">
+        <div class="grid-item">Large Gap (15px)</div>
+        <div class="grid-item">Large Gap (15px)</div>
+        <div class="grid-item">Large Gap (15px)</div>
+    </div>
+</body>
+</html>
