@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Align and Sizing in CSS Example</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Aligns items horizontally (center) */
+            align-items: center;     /* Aligns items vertically (center) */
+            height: 300px;
+            border: 2px dashed #888;
+            background: #f9f9f9;
+        }
+        .box {
+            width: 120px;
+            height: 120px;
+            background: #4caf50;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Align and Sizing Example</h2>
+    <div class="container">
+        <div class="box">
+            Centered Box
+        </div>
+    </div>
+    <p>
+        The green box is horizontally and vertically centered using <code>justify-content</code> and <code>align-items</code>.<br>
+        Its size is set with <code>width</code> and <code>height</code>.
+    </p>
+</body>
+</html>
