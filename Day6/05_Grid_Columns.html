@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Columns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+        }
+        
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .grid-container {
+            display: grid;
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .code {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background-color: #e7f4ff;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Columns</h1>
+    
+    <!-- 1. Basic Column Definition -->
+    <h2>1. Basic Column Definition</h2>
+    <div class="code">grid-template-columns: 100px 200px 150px;</div>
+    
+    <div class="grid-container" style="grid-template-columns: 100px 200px 150px;">
+        <div class="grid-item">100px</div>
+        <div class="grid-item">200px</div>
+        <div class="grid-item">150px</div>
+    </div>
+
+    <!-- 2. Fraction Units (fr) -->
+    <h2>2. Fraction Units (fr)</h2>
+    <div class="code">grid-template-columns: 1fr 2fr 1fr;</div>
+    <div class="note">The fr unit represents a fraction of the available space.</div>
+    
+    <div class="grid-container" style="grid-template-columns: 1fr 2fr 1fr;">
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">2fr</div>
+        <div class="grid-item">1fr</div>
+    </div>
+
+    <!-- 3. Repeat() Function -->
+    <h2>3. Repeat() Function</h2>
+    <div class="code">grid-template-columns: repeat(4, 100px); /* 4 columns of 100px */
+grid-template-columns: repeat(3, 1fr); /* 3 equal columns */</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(4, 100px);">
+        <div class="grid-item">100px</div>
+        <div class="grid-item">100px</div>
+        <div class="grid-item">100px</div>
+        <div class="grid-item">100px</div>
+    </div>
+
+    <!-- 4. Auto-Sizing Columns -->
+    <h2>4. Auto-Sizing Columns</h2>
+    <div class="code">grid-template-columns: auto auto auto;</div>
+    <div class="note">Columns will size to fit their content.</div>
+    
+    <div class="grid-container" style="grid-template-columns: auto auto auto;">
+        <div class="grid-item">Short</div>
+        <div class="grid-item">Medium length content</div>
+        <div class="grid-item">Very long content that will make this column wider</div>
+    </div>
+
+    <!-- 5. Minmax() Function -->
+    <h2>5. Minmax() Function</h2>
+    <div class="code">grid-template-columns: minmax(100px, 1fr) minmax(200px, 2fr);</div>
+    <div class="note">Columns will be at least the first value and at most the second value.</div>
+    
+    <div class="grid-container" style="grid-template-columns: minmax(100px, 1fr) minmax(200px, 2fr);">
+        <div class="grid-item">Min 100px, Max 1fr</div>
+        <div class="grid-item">Min 200px, Max 2fr</div>
+    </div>
+
+    <!-- 6. Responsive Columns -->
+    <h2>6. Responsive Columns</h2>
+    <div class="code">grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</div>
+    <div class="note">Creates as many 200px columns as will fit, stretching them equally if there's extra space.</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+    </div>
+
+    <!-- 7. Named Grid Lines -->
+    <h2>7. Named Grid Lines</h2>
+    <div class="code">grid-template-columns: [start] 100px [middle] 1fr [end];</div>
+    
+    <div class="grid-container" style="grid-template-columns: [start] 100px [middle] 1fr [end];">
+        <div class="grid-item" style="grid-column: start / middle;">start to middle</div>
+        <div class="grid-item" style="grid-column: middle / end;">middle to end</div>
+    </div>
+
+    <!-- 8. Column Gaps -->
+    <h2>8. Column Gaps</h2>
+    <div class="code">column-gap: 30px;
+/* or */
+gap: 0 30px; /* row-gap column-gap */</div>
+    
+    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); column-gap: 30px;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+    </div>
+</body>
+</html>
